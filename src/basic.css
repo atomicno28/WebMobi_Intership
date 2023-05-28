@@ -1,13 +1,10 @@
-.reported {
-  text-align: center;
-  padding-bottom: 0rem;
-}
-
 button {
-  margin-top: 0.5rem;
+  margin: 1rem;
 }
 
 .form_content {
   border: 1px solid #ccc;
   padding: 20px;
+  text-align: center;
+  padding-bottom: 0rem;
 }
