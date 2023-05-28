@@ -4,7 +4,9 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import WeatherForm from "./WeatherForm";
 import WeatherReport from "./WeatherReport";
 import Error from "./Error";
-import ApiError from "./ApiError";
+import ApiError from "./apiError";
+
+import { API_KEY } from "./config";
 
 export default function App() {
   // to change the destination after entering.
@@ -50,7 +52,7 @@ export default function App() {
         u: "c",
       },
       headers: {
-        "X-RapidAPI-Key": "cd6ed1a709msh96ddf4f43a1c204p169aefjsn3b336e3ff06d",
+        "X-RapidAPI-Key": API_KEY,
         "X-RapidAPI-Host": "yahoo-weather5.p.rapidapi.com",
       },
     };
