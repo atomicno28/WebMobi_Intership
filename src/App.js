@@ -44,7 +44,7 @@ export default function App() {
         u: "c",
       },
       headers: {
-        "X-RapidAPI-Key": "cd6ed1a709msh96ddf4f43a1c204p169aefjsn3b336e3ff06c",
+        "X-RapidAPI-Key": "#confidential",
         "X-RapidAPI-Host": "yahoo-weather5.p.rapidapi.com",
       },
     };
