@@ -1,0 +1,13 @@
+.reported {
+  text-align: center;
+  padding-bottom: 0rem;
+}
+
+button {
+  margin-top: 0.5rem;
+}
+
+.form_content {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
