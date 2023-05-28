@@ -6,6 +6,7 @@ import WeatherReport from "./WeatherReport";
 import Error from "./Error";
 import ApiError from "./apiError";
 
+// confidentiality.
 import { API_KEY } from "./config";
 
 export default function App() {
