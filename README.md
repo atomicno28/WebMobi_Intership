@@ -3,5 +3,5 @@
 2. Axios
 
 ### Key-Points
--> handle all the exceptions.
--> used routing to show the answers as well as the errors.
+1. handle all the exceptions.
+2. used routing to show the answers as well as the errors (using UseNavigate).
