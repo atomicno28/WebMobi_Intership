@@ -4,6 +4,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import WeatherForm from "./WeatherForm";
 import WeatherReport from "./WeatherReport";
 import Error from "./Error";
+import ApiError from "./ApiError";
 
 export default function App() {
   // to change the destination after entering.
@@ -19,6 +20,9 @@ export default function App() {
   const [set, changeSet] = useState(false);
   const [load, setLoad] = useState(false);
 
+  // if the request get rejected.
+  const [apibug, setApiBug] = useState(false);
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setLoad(true);
@@ -26,12 +30,14 @@ export default function App() {
     try {
       const response = await fetchWeatherData(city);
       setFetchedValue(response.data);
-      setLoad(false);
       changeSet(true);
       navigate("/fetched_data");
     } catch (error) {
+      navigate("/apierror");
+      setApiBug(true);
       console.error(error);
     }
+    setLoad(false);
   };
 
   const fetchWeatherData = async (city) => {
@@ -44,7 +50,7 @@ export default function App() {
         u: "c",
       },
       headers: {
-        "X-RapidAPI-Key": "#confidential",
+        "X-RapidAPI-Key": "cd6ed1a709msh96ddf4f43a1c204p169aefjsn3b336e3ff06d",
         "X-RapidAPI-Host": "yahoo-weather5.p.rapidapi.com",
       },
     };
@@ -54,7 +60,7 @@ export default function App() {
   };
 
   return (
-    <div className="reported">
+    <div className="form_content">
       <Routes>
         <Route
           index
@@ -73,6 +79,7 @@ export default function App() {
           path="/fetched_data"
           element={set ? <WeatherReport report={fetchedValue} /> : <Error />}
         />
+        <Route path="/apierror" element={apibug ? <ApiError /> : <Error />} />
       </Routes>
 
       {load && <p> Loading...</p>}

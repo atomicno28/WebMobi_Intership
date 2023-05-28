@@ -8,7 +8,7 @@ export default function Error() {
 
   return (
     <>
-      <div className="reported">
+      <div className="form_content">
         <p>Please Enter the City Name First. </p>
         <button onClick={handleClick}> Go back </button>
       </div>
